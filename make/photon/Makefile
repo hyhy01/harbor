@@ -104,6 +104,7 @@ CHART_SERVER_BIN_NAME=chartm
 
 _build_prepare:
 	@echo "building prepare container for photon..."
+	@echo "$(BASEIMAGETAG)"
 	@$(DOCKERBUILD) --build-arg harbor_base_image_version=$(BASEIMAGETAG) --build-arg harbor_base_namespace=$(BASEIMAGENAMESPACE) -f $(DOCKERFILEPATH_PREPARE)/$(DOCKERFILENAME_PREPARE) -t $(DOCKERIMAGENAME_PREPARE):$(VERSIONTAG) .
 	@echo "Done."
 

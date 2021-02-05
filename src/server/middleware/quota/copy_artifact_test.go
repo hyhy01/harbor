@@ -107,7 +107,7 @@ func (suite *CopyArtifactMiddlewareTestSuite) TestResourcesWarning() {
 		q.SetUsed(types.ResourceList{types.ResourceStorage: 50})
 		mock.OnAnything(suite.quotaController, "GetByRef").Return(q, nil).Once()
 
-		req := httptest.NewRequest(http.MethodPut, "/v2/library/photon/manifests/2.0?from=library/photon:2.0.1", nil)
+		req := httptest.NewRequest(http.MethodPut, "/v2/library/photon/manifests/2.0?from=library/photon:3.0.1", nil)
 		eveCtx := notification.NewEventCtx()
 		req = req.WithContext(notification.NewContext(req.Context(), eveCtx))
 		rr := httptest.NewRecorder()
@@ -123,7 +123,7 @@ func (suite *CopyArtifactMiddlewareTestSuite) TestResourcesWarning() {
 		q.SetUsed(types.ResourceList{types.ResourceStorage: 85})
 		mock.OnAnything(suite.quotaController, "GetByRef").Return(q, nil).Once()
 
-		req := httptest.NewRequest(http.MethodPut, "/v2/library/photon/manifests/2.0?from=library/photon:2.0.1", nil)
+		req := httptest.NewRequest(http.MethodPut, "/v2/library/photon/manifests/2.0?from=library/photon:3.0.1", nil)
 		eveCtx := notification.NewEventCtx()
 		req = req.WithContext(notification.NewContext(req.Context(), eveCtx))
 		rr := httptest.NewRecorder()

@@ -78,9 +78,9 @@ DEVFLAG=true
 NOTARYFLAG=false
 CLAIRFLAG=false
 TRIVYFLAG=false
-HTTPPROXY=
+HTTPPROXY=http://10.6.10.156:8118
 BUILDBIN=false
-NPM_REGISTRY=https://registry.npmjs.org
+NPM_REGISTRY=https://registry.npm.taobao.org
 # enable/disable chart repo supporting
 CHARTFLAG=false
 BUILDTARGET=build

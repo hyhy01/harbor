@@ -1,3 +1,19 @@
+# 修改为arm64
+## TODO
+```shell
+CLAIR_ADAPTER_DOWNLOAD_URL=https://github.com/goharbor/harbor-scanner-clair/releases/download/$(CLAIRADAPTERVERSION)/harbor-scanner-clair_$(CLAIRADAPTERVERSION:v%=%)_Linux_x86_64.tar.gz
+TRIVY_DOWNLOAD_URL=https://github.com/aquasecurity/trivy/releases/download/$(TRIVYVERSION)/trivy_$(TRIVYVERSION:v%=%)_Linux-64bit.tar.gz
+TRIVY_ADAPTER_DOWNLOAD_URL=https://github.com/aquasecurity/harbor-scanner-trivy/releases/download/$(TRIVYADAPTERVERSION)/harbor-scanner-trivy_$(TRIVYADAPTERVERSION:v%=%)_Linux_x86_64.tar.gz
+```
+这里应可能改为arm64的包才能用,TRIVY_DOWNLOAD_URL肯定要的 ,TRIVY现在还算构建失败，而chart服务器可以直接使用
+## 构建
+所有地方设置了http代理，需要修改http://10.6.10.156:8118，替换为需要的
+```shell
+make build_base_docker -e DEVFLAG=false CLAIRFLAG=true CHARTFLAG=true NOTARYFLAG=true TRIVYFLAG=true BASEIMAGENAMESPACE=hyhy01 REGISTRYUSER=hyhy01 REGISTRYPASSWORD=xxxx 
+make package_offline -e CLAIRFLAG=true CHARTFLAG=true NOTARYFLAG=true
+```
+## 常见问题
+× save immage失败，是某个镜像构建失败了，去docker看看缺了什么镜像
 # Harbor
 
 [![CI](https://github.com/goharbor/harbor/workflows/CI/badge.svg?branch=master&event=push)](https:///github.com/goharbor/harbor/actions?query=event%3Apush+branch%3Amaster+workflow%3ACI+)

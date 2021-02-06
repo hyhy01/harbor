@@ -10,7 +10,7 @@ ENV HTTP_PROXY http://10.6.10.156:8118
 ENV HTTPS_PROXY http://10.6.10.156:8118
 ENV http_proxy http://10.6.10.156:8118
 ENV https_proxy http://10.6.10.156:8118
-ENV GOPROXY=https://goproxy.cn,directs
+RUN go env -w GOPROXY=https://goproxy.cn,direct
 
 RUN git clone --config http.proxy=http://10.6.10.156:8118 -b $NOTARY_VERSION https://github.com/theupdateframework/notary.git /go/src/${NOTARYPKG}
 WORKDIR /go/src/${NOTARYPKG}

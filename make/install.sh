@@ -21,7 +21,7 @@ with_clair=$false
 # trivy is not enabled by default
 with_trivy=$false
 # chartmuseum is not enabled by default
-with_chartmuseum=$false
+with_chartmuseum=true
 
 while [ $# -gt 0 ]; do
         case $1 in

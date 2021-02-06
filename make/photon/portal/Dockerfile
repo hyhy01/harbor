@@ -3,8 +3,10 @@ ARG harbor_base_namespace
 FROM node:10.15.0 as nodeportal
 
 WORKDIR /build_dir
-
-ARG npm_registry=https://registry.npmjs.org
+RUN echo "deb http://ftp.cn.debian.org/debian stretch main\n\
+          deb http://ftp.cn.debian.org/debian-security stretch/updates main\n\
+          deb http://ftp.cn.debian.org/debian stretch-updates main">/etc/apt/sources.list
+ARG npm_registry=https://registry.npm.taobao.org
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends python-yaml=3.12-1

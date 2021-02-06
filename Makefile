@@ -79,7 +79,7 @@ NOTARYFLAG=false
 CLAIRFLAG=false
 TRIVYFLAG=false
 HTTPPROXY=http://10.6.10.156:8118
-BUILDBIN=false
+BUILDBIN=true
 NPM_REGISTRY=https://registry.npm.taobao.org
 # enable/disable chart repo supporting
 CHARTFLAG=false
@@ -220,14 +220,14 @@ MAKEFILEPATH_PHOTON=$(MAKEPATH)/photon
 DOCKERFILEPATH_COMMON=$(MAKEPATH)/common
 
 # docker image name
-DOCKER_IMAGE_NAME_PREPARE=goharbor/prepare
-DOCKERIMAGENAME_PORTAL=goharbor/harbor-portal
-DOCKERIMAGENAME_CORE=goharbor/harbor-core
-DOCKERIMAGENAME_JOBSERVICE=goharbor/harbor-jobservice
-DOCKERIMAGENAME_LOG=goharbor/harbor-log
-DOCKERIMAGENAME_DB=goharbor/harbor-db
-DOCKERIMAGENAME_CHART_SERVER=goharbor/chartmuseum-photon
-DOCKERIMAGENAME_REGCTL=goharbor/harbor-registryctl
+DOCKER_IMAGE_NAME_PREPARE=hyhy01/prepare
+DOCKERIMAGENAME_PORTAL=hyhy01/harbor-portal
+DOCKERIMAGENAME_CORE=hyhy01/harbor-core
+DOCKERIMAGENAME_JOBSERVICE=hyhy01/harbor-jobservice
+DOCKERIMAGENAME_LOG=hyhy01/harbor-log
+DOCKERIMAGENAME_DB=hyhy01/harbor-db
+DOCKERIMAGENAME_CHART_SERVER=hyhy01/chartmuseum-photon
+DOCKERIMAGENAME_REGCTL=hyhy01/harbor-registryctl
 
 # docker-compose files
 DOCKERCOMPOSEFILEPATH=$(MAKEPATH)

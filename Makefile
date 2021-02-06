@@ -88,12 +88,12 @@ GEN_TLS=
 
 # version prepare
 # for docker image tag
-VERSIONTAG=v2.0.1
+VERSIONTAG=v2.0.1-arm64
 # for base docker image tag
 BASEIMAGETAG=v2.0.1
 BASEIMAGENAMESPACE=hyhy01
 # for harbor package name
-PKGVERSIONTAG=v2.0.1
+PKGVERSIONTAG=v2.0.1-arm64
 
 PREPARE_VERSION_NAME=versions
 
@@ -220,14 +220,14 @@ MAKEFILEPATH_PHOTON=$(MAKEPATH)/photon
 DOCKERFILEPATH_COMMON=$(MAKEPATH)/common
 
 # docker image name
-DOCKER_IMAGE_NAME_PREPARE=hyhy01/prepare
-DOCKERIMAGENAME_PORTAL=hyhy01/harbor-portal
-DOCKERIMAGENAME_CORE=hyhy01/harbor-core
-DOCKERIMAGENAME_JOBSERVICE=hyhy01/harbor-jobservice
-DOCKERIMAGENAME_LOG=hyhy01/harbor-log
-DOCKERIMAGENAME_DB=hyhy01/harbor-db
-DOCKERIMAGENAME_CHART_SERVER=hyhy01/chartmuseum-photon
-DOCKERIMAGENAME_REGCTL=hyhy01/harbor-registryctl
+DOCKER_IMAGE_NAME_PREPARE=goharbor/prepare
+DOCKERIMAGENAME_PORTAL=goharbor/harbor-portal
+DOCKERIMAGENAME_CORE=goharbor/harbor-core
+DOCKERIMAGENAME_JOBSERVICE=goharbor/harbor-jobservice
+DOCKERIMAGENAME_LOG=goharbor/harbor-log
+DOCKERIMAGENAME_DB=goharbor/harbor-db
+DOCKERIMAGENAME_CHART_SERVER=goharbor/chartmuseum-photon
+DOCKERIMAGENAME_REGCTL=goharbor/harbor-registryctl
 
 # docker-compose files
 DOCKERCOMPOSEFILEPATH=$(MAKEPATH)
@@ -409,7 +409,7 @@ package_online: update_prepare_version
 	@echo "Done."
 
 package_offline: update_prepare_version compile build
-
+	@echo "aaaa$(DOCKERSAVE_PARA)"
 	@echo "packing offline package ..."
 	@cp -r make $(HARBORPKG)
 	@cp LICENSE $(HARBORPKG)/LICENSE

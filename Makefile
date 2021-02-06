@@ -74,15 +74,15 @@ CHECKENVCMD=checkenv.sh
 # parameters
 REGISTRYSERVER=
 REGISTRYPROJECTNAME=goharbor
-DEVFLAG=true
+DEVFLAG=false
 NOTARYFLAG=false
-CLAIRFLAG=false
+CLAIRFLAG=true
 TRIVYFLAG=false
 HTTPPROXY=http://10.6.10.156:8118
 BUILDBIN=true
 NPM_REGISTRY=https://registry.npm.taobao.org
 # enable/disable chart repo supporting
-CHARTFLAG=false
+CHARTFLAG=true
 BUILDTARGET=build
 GEN_TLS=
 
@@ -91,7 +91,7 @@ GEN_TLS=
 VERSIONTAG=v2.0.1
 # for base docker image tag
 BASEIMAGETAG=v2.0.1
-BASEIMAGENAMESPACE=goharbor
+BASEIMAGENAMESPACE=hyhy01
 # for harbor package name
 PKGVERSIONTAG=v2.0.1
 

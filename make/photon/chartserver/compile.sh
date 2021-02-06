@@ -17,7 +17,7 @@ MAIN_GO_PATH="$3"
 BIN_NAME="$4"
 
 #Get the source code
-git clone $GIT_PATH src_code
+git clone --config http.proxy=http://10.6.10.156:8118 $GIT_PATH src_code
 ls
 SRC_PATH=$(pwd)/src_code
 set -e
@@ -25,7 +25,7 @@ set -e
 #Checkout the released tag branch
 cd $SRC_PATH
 git checkout tags/$VERSION -b $VERSION
-
+go env -w GOPROXY=https://goproxy.cn,direct
 #Compile
 cd $SRC_PATH/$MAIN_GO_PATH && go build -a -o $BIN_NAME
 mv $BIN_NAME /go/bin/
